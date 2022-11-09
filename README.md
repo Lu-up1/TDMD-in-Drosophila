@@ -36,7 +36,7 @@ python3 CLASH.py Viennad_to_Table -i `test_cutN_comp_20220221_dm6_unique_hybrids
 python3 CLASH.py miRNA_abundance -i `test_miRNA_BGI_deduplicated.fa` -d `20220221_dm6_miRNA_database.fasta`
 
 ### 2.3 Differential expression level analysis
-`Deseq.R`
+run `Deseq.R` code
 
 ### 2.4 miRNA length distribution (isoform) count
 python3 CLASH.py miRNA_length_distribution -i `test_miRNA_BGI_deduplicated.fa` -d `20220221_dm6_miRNA_database.fasta` -m `[--miRNA_sequence]`
@@ -64,7 +64,7 @@ htseq-count `test.bam` `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff` -f b
 `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff` and `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna drosphila` can be downloaded from NCBI genome database.
 
 ### 3.6 Differential expression level analysis
-`Deseq.R`
+run `Deseq.R` code
 
 ### 3.7 Cumulative Fraction Curve analysis
 
