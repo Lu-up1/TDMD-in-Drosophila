@@ -21,7 +21,7 @@ hyb analyse in=test_cutN.fasta db=20220221_dm6_unique type=mim pref=mim format=f
 ### Potential TDMD miRNA-target RNA hybrids identification
 python3 CLASH.py Viennad_to_Table -i [--viennad] <TXT> -c [--transcript_ConservationScore_database] -t [--transcript_database] -n [--name_database]
 
-e.g. python3 CLASH.py Viennad_to_Table -i test_cutN_comp_20220221_dm6_unique_hybrids_ua -c dm6_all_conservation_score.txt -t 20220221_dm6_unique.fasta -n martquery_1109155317_9_name.txt
+*e.g. python3 CLASH.py Viennad_to_Table -i test_cutN_comp_20220221_dm6_unique_hybrids_ua -c dm6_all_conservation_score.txt -t 20220221_dm6_unique.fasta -n martquery_1109155317_9_name.txt*
 
 
 
