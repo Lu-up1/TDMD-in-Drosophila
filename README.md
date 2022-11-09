@@ -1,12 +1,12 @@
 ## 1 TDMD identification analysis
-### 1.1 Cutadapt in FASTQ
+### 1.1 Cutadapt （https://cutadapt.readthedocs.io/en/stable/） in FASTQ
 cutadapt -a TGGAATTCTCGGGTGCCAAG -A GATCGTCGGACTGTAGAACT -o `test_R1_cut.fastq` -p `test_R2_cut.fastq` `test_R1.fastq test_R2.fastq` --minimum-length 18 -j 10
 
-### 1.2 Pear in FASTQ
+### 1.2 Pear (https://cme.h-its.org/exelixis/web/software/pear/doc.html) in FASTQ
 pear -f `test_R1_cut.fastq` -r `test_R2_cut.fastq` -j 10 -o `test`
 
-### 1.3 Collapse PCR duplicated reads
-fastx_collapser -i `test.assembled.fastq` -o `test_collapsed.fasta`
+### 1.3 Collapse (http://hannonlab.cshl.edu/fastx_toolkit/) PCR duplicated reads
+fastx_collapser  -i `test.assembled.fastq` -o `test_collapsed.fasta`
 
 ### 1.4 Remove UMI sequences from 5' and 3' of FASTA
 cutadapt -u 4 -u -4 -m 18 `test_collapsed.fasta` -o `test_cutN.fasta` -j 10              
