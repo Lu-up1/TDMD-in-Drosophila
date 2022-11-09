@@ -25,7 +25,9 @@ python3 CLASH.py Viennad_to_Table -i [--viennad] <TXT> -c [--transcript_Conserva
 
 `20220221_dm6_unique.fasta` file size is 95MB.
   
-`martquery_1109155317_9_name.txt` file size is 1.4G.
+`dm6_all_conservation_score.txt` file size is 1.4G.
+  
+`martquery_1109155317_9_name.txt` file size is 8.3MB.
   
 
 ### miRNA abundance calculation
