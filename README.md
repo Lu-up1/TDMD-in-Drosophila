@@ -46,5 +46,12 @@ e.g. miR-999 length distribution count
 *python3 CLASH.py miRNA_length_distribution -i `test_miRNA_BGI_deduplicated.fa` -d `20220221_dm6_miRNA_database.fasta` -m TGTTAACTGTAAGACTGTGTCT*
 
 ## 3 poly-A RNA-seq analysis
-### 3.1 Cutadapt in FASTQ
+### 3.1 Buind Drosophila genome database index by Hisat2
+hisat2-build `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna drosphila`
+
+### 3.2 Cutadapt in FASTQ
 cutadapt -a AGATCGGAAGAGCACACGTCTGAACT -A AGATCGGAAGAGCGTCGTGTAGGGA -o `test_RNAseq_R1_cut.fq` -p `test_RNAseq_R2_cut.fq` -m 20 -j 12 `test_RNAseq_R1.fq` `test_RNAseq_R2.fq` 
+
+### 3.3 Mapping
+ hisat2 -x /blue/mingyi.xie/luli1/genome_index/Hisat2_Drosophila_genome/drosphila -1 ../Cut_data/M1_1_cut.fq -2 ../Cut_data/M1_2_cut.fq -S M1.sam -p 12
+
