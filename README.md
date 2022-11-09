@@ -1,8 +1,8 @@
 ## 1 TDMD identification analysis
-### 1.1 Cutadapt FASTQ
+### 1.1 Cutadapt in FASTQ
 cutadapt -a TGGAATTCTCGGGTGCCAAG -A GATCGTCGGACTGTAGAACT -o `test_R1_cut.fastq` -p `test_R2_cut.fastq` `test_R1.fastq test_R2.fastq` --minimum-length 18 -j 10
 
-### 1.2 Pear FASTQ
+### 1.2 Pear in FASTQ
 pear -f `test_R1_cut.fastq` -r `test_R2_cut.fastq` -j 10 -o `test`
 
 ### 1.3 Collapse PCR duplicated reads
@@ -44,3 +44,7 @@ python3 CLASH.py miRNA_length_distribution -i `test_miRNA_BGI_deduplicated.fa` -
 e.g. miR-999 length distribution count
 
 *python3 CLASH.py miRNA_length_distribution -i `test_miRNA_BGI_deduplicated.fa` -d `20220221_dm6_miRNA_database.fasta` -m TGTTAACTGTAAGACTGTGTCT*
+
+## 3 poly-A RNA-seq analysis
+### 3.1 Cutadapt in FASTQ
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACT -A AGATCGGAAGAGCGTCGTGTAGGGA -o `test_RNAseq_R1_cut.fq` -p `test_RNAseq_R2_cut.fq` -m 20 -j 12 `test_RNAseq_R1.fq` `test_RNAseq_R2.fq` 
