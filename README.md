@@ -26,13 +26,20 @@ python3 CLASH.py Viennad_to_Table -i `test_cutN_comp_20220221_dm6_unique_hybrids
 `dm6_all_conservation_score.txt` file size is 1.4G.
   
 `martquery_1109155317_9_name.txt` file size is 8.3MB.
+
   
 
-## 2 miRNA abundance calculation
+## 2 miRNA analysis
 ### 2.1 Deduplicate clean-miRNA-seq reads from BGI
-  python3 CLASH.py deduplicate_BGI -i [--input] <fastq>
+  python3 CLASH.py deduplicate_BGI -i `test_miRNA_BGI.fq`
 ### 2.2 miRNA abundance calculation
-python3 CLASH.py miRNA_abundance -i [--input] <fasta/fastq> -d [--miRNA_database]
+python3 CLASH.py miRNA_abundance -i `test_miRNA_BGI_deduplicated.fa` -d `20220221_dm6_miRNA_database.fasta`
 
+### 2.3 Differential expression level analysis
+`Deseq.R`
 
+### 2.4 miRNA length distribution (isoform) count
+python3 CLASH.py miRNA_length_distribution -i `test_miRNA_BGI_deduplicated.fa` -d `20220221_dm6_miRNA_database.fasta` -m `[--miRNA_sequence]` -p `[--primiRNA_sequence]`
+e.g. miR-999 length distribution
 
+*python3 CLASH.py miRNA_length_distribution -i `test_miRNA_BGI_deduplicated.fa` -d `20220221_dm6_miRNA_database.fasta` -m TGTTAACTGTAAGACTGTGTCT -p `x`*
