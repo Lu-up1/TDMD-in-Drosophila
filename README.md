@@ -50,10 +50,10 @@ e.g. miR-999 length distribution count
 hisat2-build `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna drosphila`
 
 ### 3.2 Cutadapt in FASTQ
-cutadapt -a AGATCGGAAGAGCACACGTCTGAACT -A AGATCGGAAGAGCGTCGTGTAGGGA -o `test_RNAseq_R1_cut.fq` -p `test_RNAseq_R2_cut.fq` -m 20 -j 12 `test_RNAseq_R1.fq` `test_RNAseq_R2.fq` 
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACT -A AGATCGGAAGAGCGTCGTGTAGGGA -o `test_R1_cut.fq` -p `test_R2_cut.fq` -m 20 -j 12 `test_R1.fastq `test_R2.fastq` 
 
 ### 3.3 Mapping
- hisat2 -x drosphila -1 `test_RNAseq_R1.fq` -2 `test_RNAseq_R2.fq` -S test.sam -p 12
+ hisat2 -x drosphila -1 `test_R1_cut.fq` -2 `test_R2_cut.fq` -S test.sam -p 12
  
 ### 3.4 transfer SAM file to BAM file
 samtools sort -@ 12 -O BAM -o `test.bam test.sam`
