@@ -11,6 +11,10 @@ fastx_collapser -i test.assembled.fastq -o test_collapsed.fasta
 ### Remove UMI sequences from 5' and 3' of FASTA
 cutadapt -u 4 -u -4 -m 18 test_collapsed.fasta -o test_cutN.fasta -j 10              
 
+### Run hyb(https://github.com/gkudla/hyb) software
+module load hyb
+module load unafold
+hyb analyse in=test_cutN.fasta db=20220221_dm6_unique type=mim pref=mim format=fasta
 
 
 
