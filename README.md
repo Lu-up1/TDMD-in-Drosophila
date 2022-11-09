@@ -62,7 +62,7 @@ samtools sort -@ 12 -O BAM -o `test.bam test.sam`
 htseq-count `test.bam` `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff` -f bam -s no -m union -i gene --additional-attr=Parent --additional-attr=Dbxref --additional-attr=gbkey --additional-attr=transcript_id > `test.count`
 
 ```
-`GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff` and `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna drosphila` can be downloaded from NCBI genome database.`
+GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff and GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna drosphila can be downloaded from NCBI genome database.
 ```
 
 ### 3.6 Differential expression level analysis
