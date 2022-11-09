@@ -76,4 +76,4 @@ python3 CLASH.py Cumulative_fraction_curve_targetScan_CLASH -i [--DEseq_file] -a
 
 e.g. AGO1 knockout cumulative fraction curve analysis
 
-*python3 CLASH.py Cumulative_fraction_curve_targetScan_CLASH -i `output_DEseq.csv` -a `TargetScan7.2__miR-999-3p.all_predicted_targets.txt` -c `TargetScan7.2__miR-999-3p.conserved_predicted_targets.txt` -l [--clash_targets] -t [--clash_targetScan_interacted] -b 100*
+*python3 CLASH.py Cumulative_fraction_curve_targetScan_CLASH -i `output_DEseq.csv` -a `TargetScan7.2__miR-999-3p.all_predicted_targets.txt` -c `TargetScan7.2__miR-999-3p.conserved_predicted_targets.txt` -l `Exp170_miR_999_targets_unique.txt` -t `Exp265_CLASH_interact_targetScan_All.txt` -b 100*
