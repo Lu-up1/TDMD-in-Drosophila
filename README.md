@@ -40,6 +40,7 @@ python3 CLASH.py miRNA_abundance -i `test_miRNA_BGI_deduplicated.fa` -d `2022022
 
 ### 2.4 miRNA length distribution (isoform) count
 python3 CLASH.py miRNA_length_distribution -i `test_miRNA_BGI_deduplicated.fa` -d `20220221_dm6_miRNA_database.fasta` -m `[--miRNA_sequence]` -p `[--primiRNA_sequence]`
+
 e.g. miR-999 length distribution
 
 *python3 CLASH.py miRNA_length_distribution -i `test_miRNA_BGI_deduplicated.fa` -d `20220221_dm6_miRNA_database.fasta` -m TGTTAACTGTAAGACTGTGTCT -p `x`*
