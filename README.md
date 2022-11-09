@@ -61,4 +61,19 @@ samtools sort -@ 12 -O BAM -o `test.bam test.sam`
 ### 3.5 Count gene abundance
 htseq-count `test.bam` `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff` -f bam -s no -m union -i gene --additional-attr=Parent --additional-attr=Dbxref --additional-attr=gbkey --additional-attr=transcript_id > `test.count`
 
-`GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff` and `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna drosphila` can be download from NCBI genome database.
+`GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gff` and `GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna drosphila` can be downloaded from NCBI genome database.
+
+### 3.6 Differential expression level analysis
+`Deseq.R`
+
+### 3.7 Cumulative Fraction Curve analysis
+
+python3 CLASH.py Cumulative_fraction_curve_targetScan -i [--DEseq_file] -a [--all_targets] -c [--conserved_targets] -b [--baseMean] 
+
+or
+
+python3 CLASH.py Cumulative_fraction_curve_targetScan_CLASH -i [--DEseq_file] -a [--all_targets] -c [--conserved_targets] -l [--clash_targets] -t [--clash_targetScan_interacted] -b [--baseMean]
+
+e.g. AGO1 knockout cumulative fraction curve analysis
+
+*python3 CLASH.py Cumulative_fraction_curve_targetScan_CLASH -i `output_DEseq.csv` -a `TargetScan7.2__miR-999-3p.all_predicted_targets.txt` -c `TargetScan7.2__miR-999-3p.conserved_predicted_targets.txt` -l [--clash_targets] -t [--clash_targetScan_interacted] -b 100*
