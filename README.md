@@ -5,6 +5,15 @@ cutadapt -a TGGAATTCTCGGGTGCCAAG -A GATCGTCGGACTGTAGAACT -o test_R1_cut.fastq -p
 ### Pear FASTQ
 pear -f test_R1_cut.fastq -r test_R2_cut.fastq -j 10 -o test
 
+### Collapse PCR duplicated reads
+fastx_collapser -i test.assembled.fastq -o test_collapsed.fasta
+
+### Remove UMI sequences from 5' and 3' of FASTA
+cutadapt -u 4 -u -4 -m 18 test_collapsed.fasta -o test_cutN.fasta -j 10              
+
+
+
+
 ### miRNA abundance calculation
 python3 CLASH.py miRNA_abundance -i [--input] <fasta/fastq> -d [--miRNA_database]
 
