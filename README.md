@@ -1,3 +1,4 @@
+# TDMD in Drosophila pipeline
 ## 1 TDMD identification analysis
 ### 1.1 Cutadapt （https://cutadapt.readthedocs.io/en/stable/） in FASTQ
 cutadapt -a TGGAATTCTCGGGTGCCAAG -A GATCGTCGGACTGTAGAACT -o `test_R1_cut.fastq` -p `test_R2_cut.fastq` `test_R1.fastq test_R2.fastq` --minimum-length 18 -j 10
